@@ -5,6 +5,12 @@ import java.util.Scanner;
 
 public class FuncaoComRetorno {
 
+    public static double PedirNumero(){
+        Scanner i  = new Scanner(System.in);
+        System.out.print("Digite um numero");
+        double num = i.nextDouble();
+        return num;
+    }
 public static void criarMenu() {
 
         //Colocar o que vai aconteer ao executar
@@ -29,40 +35,27 @@ public static void criarMenu() {
     }
 
     public static void calcularDobro() {
-        Scanner e = new Scanner(System.in);
-        double n, dobro;
-        System.out.print("Digite um número: ");
-        n = e.nextDouble();
-        dobro = n * 2;
+        double n = PedirNumero();
+        double dobro = n * 2;
         System.out.println("Dobro de " + n + " = " + dobro);
     }
 
     public static void somar2Numeros() {
-        Scanner e = new Scanner(System.in);
-        int n, o, soma;
+    
+        double n, o, soma;
         System.out.print("Digite um número: ");
-        n = e.nextInt();
+        n = PedirNumero();
         System.out.print("Digite outro número: ");
-        o = e.nextInt();
+        o = PedirNumero();
         soma = o + n;
         System.out.println("A soma de " + n + " + " + o + " = " + soma);
     }
 
     public static void raizQuadrada() {
-        Scanner e = new Scanner(System.in);
         double n, resultado;
         System.out.print("Digite um número: ");
-        n = e.nextInt();
+        n = PedirNumero();
         resultado = Math.sqrt(n);
-        System.out.println("A raiz quadrada de " + n + " = " + resultado);
-    }
-
-    public static void calcQuadrado() {
-        Scanner e = new Scanner(System.in);
-        double n, resultado;
-        System.out.print("Digite um número: ");
-        n = e.nextInt();
-        resultado = Math.pow(n, 2);
         System.out.println("A raiz quadrada de " + n + " = " + resultado);
     }
 
@@ -70,6 +63,11 @@ public static void criarMenu() {
         for (int i = 1; i <= 10; i++) {
             print(x + " * " + i + " = " + (x * i));
         }
+    }
+    
+    public static void Pedir(){
+        int n = 0;
+        Scanner i  = new Scanner(System.in);
     }
 
     public static void print(String msg) {
@@ -88,10 +86,8 @@ public static void criarMenu() {
             if (opcao == 1) {
                 somar2Numeros();
             } else if (opcao == 2) {
-                calcQuadrado();
-            } else if (opcao == 3) {
                 raizQuadrada();
-            } else if (opcao == 5) {
+            } else if (opcao == 3) {
                 System.out.println("Digite um número");
                 int y = e.nextInt();
                 calcTab(y);
